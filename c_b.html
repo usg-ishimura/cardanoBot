@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>Stuck in 305</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=1024">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<style>
+			a {
+			  color: blue;
+			}
+			.control-inactive button {
+			  color: #888;
+			}
+			#fpsCounter {
+			  position: absolute;
+			  top: 25px;
+			  left: 25px;
+			  font-family: "Helvetica", "Arial";
+			}
+		</style>
+</head>
+<body>
+		<div id="container"></div>
+		<div id="fpsCounter"><table>
+		<tr><td>Cardano Blockchain Data</td><td><img width="50px" height="37px" src="./Cardano (ADA).png"/></td></tr>
+		<tr><td></td><td></td></tr>
+		<tr><td>Current Epoch: </td><td id="current_epoch"></td></tr>
+		<tr><td>Block Number: </td><td id="current_block"></td></tr>
+		<tr><td>Transactions Count: </td><td id="current_transactions"></td></tr>
+		<tr><td>Slot Number: </td><td id="current_slot"></td></tr>
+		<tr><td>FPS: </td><td id="current_fps"></td></tr>
+		</table>
+		</div>
+
+		<script type="module">
+			const epoch305 = {
+				data: {
+					blocks: [{
+						number: 6573512,
+						slotNo: 46828789,
+						transactionsCount: "32",
+						epochNo: 305
+					}, {
+						number: 6573511,
+						slotNo: 46828772,
+						transactionsCount: "22",
+						epochNo: 305
+					}, {
+						number: 6573510,
+						slotNo: 46828756,
+						transactionsCount: "22",
+						epochNo: 305
+					}, {
+						number: 6573509,
+						slotNo: 46828754,
+						transactionsCount: "90",
+						epochNo: 305
+					}, {
+						number: 6573508,
+						slotNo: 46828678,
+						transactionsCount: "31",
+						epochNo: 305
+					}, {
+						number: 6573507,
+						slotNo: 46828656,
+						transactionsCount: "55",
+						epochNo: 305
+					}, {
+						number: 6573506,
+						slotNo: 46828623,
+						transactionsCount: "50",
+						epochNo: 305
+					}, {
+						number: 6573505,
+						slotNo: 46828592,
+						transactionsCount: "42",
+						epochNo: 305
+					}, {
+						number: 6573504,
+						slotNo: 46828567,
+						transactionsCount: "14",
+						epochNo: 305
+					}, {
+						number: 6573503,
+						slotNo: 46828558,
+						transactionsCount: "32",
+						epochNo: 305
+					}, {
+						number: 6573502,
+						slotNo: 46828545,
+						transactionsCount: "11",
+						epochNo: 305
+					}, {
+						number: 6573501,
+						slotNo: 46828539,
+						transactionsCount: "20",
+						epochNo: 305
+					}, {
+						number: 6573500,
+						slotNo: 46828523,
+						transactionsCount: "28",
+						epochNo: 305
+					}, {
+						number: 6573499,
+						slotNo: 46828513,
+						transactionsCount: "0",
+						epochNo: 305
+					}, {
+						number: 6573498,
+						slotNo: 46828512,
+						transactionsCount: "4",
+						epochNo: 305
+					}, {
+						number: 6573497,
+						slotNo: 46828510,
+						transactionsCount: "72",
+						epochNo: 305
+					}, {
+						number: 6573496,
+						slotNo: 46828463,
+						transactionsCount: "6",
+						epochNo: 305
+					}, {
+						number: 6573495,
+						slotNo: 46828458,
+						transactionsCount: "90",
+						epochNo: 305
+					}, {
+						number: 6573494,
+						slotNo: 46828407,
+						transactionsCount: "56",
+						epochNo: 305
+					}, {
+						number: 6573493,
+						slotNo: 46828369,
+						transactionsCount: "33",
+						epochNo: 305
+					}, {
+						number: 6573492,
+						slotNo: 46828354,
+						transactionsCount: "1",
+						epochNo: 305
+					}, {
+						number: 6573491,
+						slotNo: 46828353,
+						transactionsCount: "30",
+						epochNo: 305
+					}, {
+						number: 6573490,
+						slotNo: 46828341,
+						transactionsCount: "32",
+						epochNo: 305
+					}, {
+						number: 6573489,
+						slotNo: 46828323,
+						transactionsCount: "93",
+						epochNo: 305
+					}, {
+						number: 6573488,
+						slotNo: 46828268,
+						transactionsCount: "3",
+						epochNo: 305
+					}, {
+						number: 6573487,
+						slotNo: 46828265,
+						transactionsCount: "80",
+						epochNo: 305
+					}, {
+						number: 6573486,
+						slotNo: 46828223,
+						transactionsCount: "98",
+						epochNo: 305
+					}, {
+						number: 6573485,
+						slotNo: 46828163,
+						transactionsCount: "27",
+						epochNo: 305
+					}, {
+						number: 6573484,
+						slotNo: 46828146,
+						transactionsCount: "78",
+						epochNo: 305
+					}, {
+						number: 6573483,
+						slotNo: 46828079,
+						transactionsCount: "29",
+						epochNo: 305
+					}, {
+						number: 6573482,
+						slotNo: 46828059,
+						transactionsCount: "17",
+						epochNo: 305
+					}, {
+						number: 6573481,
+						slotNo: 46828051,
+						transactionsCount: "3",
+						epochNo: 305
+					}, {
+						number: 6573480,
+						slotNo: 46828048,
+						transactionsCount: "35",
+						epochNo: 305
+					}, {
+						number: 6573479,
+						slotNo: 46828026,
+						transactionsCount: "39",
+						epochNo: 305
+					}, {
+						number: 6573478,
+						slotNo: 46827997,
+						transactionsCount: "4",
+						epochNo: 305
+					}, {
+						number: 6573477,
+						slotNo: 46827992,
+						transactionsCount: "9",
+						epochNo: 305
+					}, {
+						number: 6573476,
+						slotNo: 46827987,
+						transactionsCount: "32",
+						epochNo: 305
+					}, {
+						number: 6573475,
+						slotNo: 46827969,
+						transactionsCount: "10",
+						epochNo: 305
+					}, {
+						number: 6573474,
+						slotNo: 46827960,
+						transactionsCount: "28",
+						epochNo: 305
+					}, {
+						number: 6573473,
+						slotNo: 46827941,
+						transactionsCount: "12",
+						epochNo: 305
+					}, {
+						number: 6573472,
+						slotNo: 46827935,
+						transactionsCount: "15",
+						epochNo: 305
+					}, {
+						number: 6573471,
+						slotNo: 46827928,
+						transactionsCount: "32",
+						epochNo: 305
+					}, {
+						number: 6573470,
+						slotNo: 46827918,
+						transactionsCount: "78",
+						epochNo: 305
+					}, {
+						number: 6573469,
+						slotNo: 46827852,
+						transactionsCount: "46",
+						epochNo: 305
+					}, {
+						number: 6573468,
+						slotNo: 46827820,
+						transactionsCount: "42",
+						epochNo: 305
+					}, {
+						number: 6573467,
+						slotNo: 46827798,
+						transactionsCount: "8",
+						epochNo: 305
+					}, {
+						number: 6573466,
+						slotNo: 46827789,
+						transactionsCount: "4",
+						epochNo: 305
+					}, {
+						number: 6573465,
+						slotNo: 46827786,
+						transactionsCount: "89",
+						epochNo: 305
+					}, {
+						number: 6573464,
+						slotNo: 46827757,
+						transactionsCount: "74",
+						epochNo: 305
+					}, {
+						number: 6573463,
+						slotNo: 46827677,
+						transactionsCount: "12",
+						epochNo: 305
+					}, {
+						number: 6573462,
+						slotNo: 46827672,
+						transactionsCount: "33",
+						epochNo: 305
+					}, {
+						number: 6573461,
+						slotNo: 46827663,
+						transactionsCount: "62",
+						epochNo: 305
+					}, {
+						number: 6573460,
+						slotNo: 46827609,
+						transactionsCount: "13",
+						epochNo: 305
+					}, {
+						number: 6573459,
+						slotNo: 46827596,
+						transactionsCount: "36",
+						epochNo: 305
+					}, {
+						number: 6573458,
+						slotNo: 46827567,
+						transactionsCount: "67",
+						epochNo: 305
+					}, {
+						number: 6573457,
+						slotNo: 46827518,
+						transactionsCount: "18",
+						epochNo: 305
+					}, {
+						number: 6573456,
+						slotNo: 46827500,
+						transactionsCount: "16",
+						epochNo: 305
+					}, {
+						number: 6573455,
+						slotNo: 46827491,
+						transactionsCount: "24",
+						epochNo: 305
+					}, {
+						number: 6573454,
+						slotNo: 46827475,
+						transactionsCount: "8",
+						epochNo: 305
+					}, {
+						number: 6573453,
+						slotNo: 46827470,
+						transactionsCount: "26",
+						epochNo: 305
+					}, {
+						number: 6573452,
+						slotNo: 46827445,
+						transactionsCount: "9",
+						epochNo: 305
+					}, {
+						number: 6573451,
+						slotNo: 46827442,
+						transactionsCount: "18",
+						epochNo: 305
+					}, {
+						number: 6573450,
+						slotNo: 46827429,
+						transactionsCount: "14",
+						epochNo: 305
+					}, {
+						number: 6573449,
+						slotNo: 46827418,
+						transactionsCount: "3",
+						epochNo: 305
+					}, {
+						number: 6573448,
+						slotNo: 46827413,
+						transactionsCount: "17",
+						epochNo: 305
+					}, {
+						number: 6573447,
+						slotNo: 46827402,
+						transactionsCount: "10",
+						epochNo: 305
+					}, {
+						number: 6573446,
+						slotNo: 46827397,
+						transactionsCount: "20",
+						epochNo: 305
+					}, {
+						number: 6573445,
+						slotNo: 46827388,
+						transactionsCount: "17",
+						epochNo: 305
+					}, {
+						number: 6573444,
+						slotNo: 46827377,
+						transactionsCount: "22",
+						epochNo: 305
+					}, {
+						number: 6573443,
+						slotNo: 46827363,
+						transactionsCount: "32",
+						epochNo: 305
+					}, {
+						number: 6573442,
+						slotNo: 46827344,
+						transactionsCount: "6",
+						epochNo: 305
+					}, {
+						number: 6573441,
+						slotNo: 46827343,
+						transactionsCount: "20",
+						epochNo: 305
+					}, {
+						number: 6573440,
+						slotNo: 46827327,
+						transactionsCount: "28",
+						epochNo: 305
+					}, {
+						number: 6573439,
+						slotNo: 46827313,
+						transactionsCount: "13",
+						epochNo: 305
+					}, {
+						number: 6573438,
+						slotNo: 46827305,
+						transactionsCount: "29",
+						epochNo: 305
+					}, {
+						number: 6573437,
+						slotNo: 46827290,
+						transactionsCount: "17",
+						epochNo: 305
+					}, {
+						number: 6573436,
+						slotNo: 46827280,
+						transactionsCount: "37",
+						epochNo: 305
+					}, {
+						number: 6573435,
+						slotNo: 46827260,
+						transactionsCount: "1",
+						epochNo: 305
+					}, {
+						number: 6573434,
+						slotNo: 46827259,
+						transactionsCount: "30",
+						epochNo: 305
+					}, {
+						number: 6573433,
+						slotNo: 46827257,
+						transactionsCount: "101",
+						epochNo: 305
+					}, {
+						number: 6573432,
+						slotNo: 46827225,
+						transactionsCount: "101",
+						epochNo: 305
+					}, {
+						number: 6573431,
+						slotNo: 46827070,
+						transactionsCount: "55",
+						epochNo: 305
+					}, {
+						number: 6573430,
+						slotNo: 46827031,
+						transactionsCount: "1",
+						epochNo: 305
+					}, {
+						number: 6573429,
+						slotNo: 46827029,
+						transactionsCount: "29",
+						epochNo: 305
+					}, {
+						number: 6573428,
+						slotNo: 46827015,
+						transactionsCount: "25",
+						epochNo: 305
+					}, {
+						number: 6573427,
+						slotNo: 46826996,
+						transactionsCount: "58",
+						epochNo: 305
+					}, {
+						number: 6573426,
+						slotNo: 46826960,
+						transactionsCount: "17",
+						epochNo: 305
+					}, {
+						number: 6573425,
+						slotNo: 46826946,
+						transactionsCount: "18",
+						epochNo: 305
+					}, {
+						number: 6573424,
+						slotNo: 46826934,
+						transactionsCount: "46",
+						epochNo: 305
+					}, {
+						number: 6573423,
+						slotNo: 46826911,
+						transactionsCount: "82",
+						epochNo: 305
+					}, {
+						number: 6573422,
+						slotNo: 46826863,
+						transactionsCount: "63",
+						epochNo: 305
+					}, {
+						number: 6573421,
+						slotNo: 46826825,
+						transactionsCount: "41",
+						epochNo: 305
+					}, {
+						number: 6573420,
+						slotNo: 46826800,
+						transactionsCount: "54",
+						epochNo: 305
+					}, {
+						number: 6573419,
+						slotNo: 46826763,
+						transactionsCount: "46",
+						epochNo: 305
+					}, {
+						number: 6573418,
+						slotNo: 46826732,
+						transactionsCount: "15",
+						epochNo: 305
+					}, {
+						number: 6573417,
+						slotNo: 46826721,
+						transactionsCount: "39",
+						epochNo: 305
+					}, {
+						number: 6573416,
+						slotNo: 46826700,
+						transactionsCount: "14",
+						epochNo: 305
+					}, {
+						number: 6573415,
+						slotNo: 46826691,
+						transactionsCount: "7",
+						epochNo: 305
+					}, {
+						number: 6573414,
+						slotNo: 46826686,
+						transactionsCount: "59",
+						epochNo: 305
+					}, {
+						number: 6573413,
+						slotNo: 46826650,
+						transactionsCount: "41",
+						epochNo: 305
+					}]
+				}
+			};
+
+			import * as THREE from './build/three.module.js';
+			import Stats from './examples/jsm/libs/stats.module.js';
+			import {
+				GUI
+			} from './examples/jsm/libs/lil-gui.module.min.js';
+			import {
+				OrbitControls
+			} from './examples/jsm/controls/OrbitControls.js';
+			import {
+				GLTFLoader
+			} from './examples/jsm/loaders/GLTFLoader.js';
+
+			let scene, renderer, camera, stats;
+			let model, skeleton, mixer, clock;
+
+			const times = [];
+			let fps;
+
+			function refreshLoop() {
+				window.requestAnimationFrame(() => {
+					const now = performance.now();
+					while (times.length > 0 && times[0] <= now - 1000) {
+						times.shift();
+					}
+					times.push(now);
+					fps = times.length;
+					document.getElementById('current_fps').innerHTML = fps;
+					refreshLoop();
+				});
+			}
+
+			const crossFadeControls = [];
+
+			let currentBaseAction = 'idle';
+			const allActions = [];
+			var baseActions = {
+				None: {
+					weight: 0
+				},
+				idle: {
+					weight: 1
+				},
+				walk: {
+					weight: 0
+				},
+				run: {
+					weight: 0
+				}
+			};
+			const additiveActions = {
+				sneak_pose: {
+					weight: 0
+				},
+				sad_pose: {
+					weight: 0
+				},
+				agree: {
+					weight: 0
+				},
+				headShake: {
+					weight: 0
+				}
+			};
+			let panelSettings, numAnimations;
+
+			init();
+
+			function init() {
+
+				const container = document.getElementById('container');
+				clock = new THREE.Clock();
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color(0xa0a0a0);
+				scene.fog = new THREE.Fog(0xa0a0a0, 10, 50);
+
+				const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444);
+				hemiLight.position.set(0, 20, 0);
+				scene.add(hemiLight);
+
+				const dirLight = new THREE.DirectionalLight(0xffffff);
+				dirLight.position.set(3, 10, 10);
+				dirLight.castShadow = true;
+				dirLight.shadow.camera.top = 2;
+				dirLight.shadow.camera.bottom = -2;
+				dirLight.shadow.camera.left = -2;
+				dirLight.shadow.camera.right = 2;
+				dirLight.shadow.camera.near = 0.1;
+				dirLight.shadow.camera.far = 40;
+				scene.add(dirLight);
+
+				// ground
+
+				const mesh = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), new THREE.MeshPhongMaterial({
+					color: 0x999999,
+					depthWrite: false
+				}));
+				mesh.rotation.x = -Math.PI / 2;
+				mesh.receiveShadow = true;
+				scene.add(mesh);
+
+				const loader = new GLTFLoader();
+				loader.load('./examples/models/gltf/Xbot.glb', function(gltf) {
+					model = gltf.scene;
+					scene.add(model);
+
+					model.traverse(function(object) {
+
+						if (object.isMesh) object.castShadow = true;
+
+					});
+
+					skeleton = new THREE.SkeletonHelper(model);
+					skeleton.visible = false;
+					scene.add(skeleton);
+
+					const animations = gltf.animations;
+					mixer = new THREE.AnimationMixer(model);
+
+					numAnimations = animations.length;
+					for (let i = 0; i !== numAnimations; ++i) {
+
+						let clip = animations[i];
+						const name = clip.name;
+
+						if (baseActions[name]) {
+
+							const action = mixer.clipAction(clip);
+							activateAction(action);
+							baseActions[name].action = action;
+							allActions.push(action);
+
+						} else if (additiveActions[name]) {
+
+							// Make the clip additive and remove the reference frame
+
+							THREE.AnimationUtils.makeClipAdditive(clip);
+
+							if (clip.name.endsWith('_pose')) {
+
+								clip = THREE.AnimationUtils.subclip(clip, clip.name, 2, 3, 30);
+
+							}
+
+							const action = mixer.clipAction(clip);
+							activateAction(action);
+							additiveActions[name].action = action;
+							allActions.push(action);
+
+						}
+
+					}
+					// scrivo i movimenti nel documento senza usare il control panel.
+					createPanel();
+					refreshLoop();
+					animate();
+					dandelionAPIs(allActions, epoch305);
+
+				});
+				renderer = new THREE.WebGLRenderer({
+					antialias: true
+				});
+				renderer.setPixelRatio(window.devicePixelRatio);
+				renderer.setSize(window.innerWidth, window.innerHeight);
+				renderer.outputEncoding = THREE.sRGBEncoding;
+				renderer.shadowMap.enabled = true;
+				container.appendChild(renderer.domElement);
+
+				// camera
+				camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 100);
+				camera.position.set(-1, 2, 3);
+
+				const controls = new OrbitControls(camera, renderer.domElement);
+				controls.enablePan = false;
+				controls.enableZoom = false;
+				controls.target.set(0, 1, 0);
+				controls.update();
+
+				stats = new Stats();
+
+				//container.appendChild( stats.dom );
+
+				window.addEventListener('resize', onWindowResize);
+
+			}
+
+			function createPanel() {
+
+				const panel = new GUI({
+					width: 310
+				});
+
+				const folder1 = panel.addFolder('Base Actions');
+				const folder2 = panel.addFolder('Additive Action Weights');
+				const folder3 = panel.addFolder('General Speed');
+
+				panelSettings = {
+					'modify time scale': 1.0
+				};
+
+				const baseNames = [...Object.keys(baseActions)];
+
+				for (let i = 0, l = baseNames.length; i !== l; ++i) {
+
+					const name = baseNames[i];
+					const settings = baseActions[name];
+					panelSettings[name] = function() {
+						const currentSettings = baseActions[currentBaseAction];
+						const currentAction = currentSettings ? currentSettings.action : null;
+						const action = settings ? settings.action : null;
+						prepareCrossFade(currentAction, action, 0.35);
+					};
+
+					crossFadeControls.push(folder1.add(panelSettings, name));
+
+				}
+				for (const name of Object.keys(additiveActions)) {
+					const settings = additiveActions[name];
+
+					panelSettings[name] = settings.weight;
+					if (name !== 'sad_pose') {
+						folder2.add(panelSettings, name, 0.0, 1.0, 0.01).listen().onChange(function(weight) {
+
+							setWeight(settings.action, weight);
+							settings.weight = weight;
+
+						});
+					}
+
+				}
+
+				folder3.add(panelSettings, 'modify time scale', 0.0, 1.5, 0.01).listen().onChange(modifyTimeScale);
+
+				folder1.open();
+				folder2.open();
+				folder3.open();
+
+				crossFadeControls.forEach(function(control) {
+
+					control.setInactive = function() {
+
+						control.domElement.classList.add('control-inactive');
+
+					};
+
+					control.setActive = function() {
+
+						control.domElement.classList.remove('control-inactive');
+
+					};
+
+					const settings = baseActions[control.property];
+					if (!settings || !settings.weight) {
+
+						control.setInactive();
+
+					}
+
+				});
+
+			}
+
+			function dandelionAPIs(allActions, epoch305) {
+				var url = "https://graphql-api.mainnet.dandelion.link";
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", url);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						scanActions(JSON.parse(xhr.responseText), allActions, false);
+					} else if (xhr.readyState === 4 && xhr.status !== 200) {
+						scanActions(epoch305, allActions, true);
+					}
+				};
+				var data = '{"query": "{cardano {currentEpoch {number blocks (limit: 50, order_by: {number: desc}){number slotNo transactionsCount epochNo}}}}"}';
+				xhr.send(data);
+			}
+
+			function scanActions(epoch, allActions, default305) {
+				const allActionsLen = allActions.length;
+				var blocks = [];
+				if (default305) {
+					blocks = epoch.data.blocks;
+				} else {
+					blocks = epoch.data.cardano.currentEpoch.blocks
+				}
+				blocks.reverse();
+				console.log(blocks);
+				const blocksLen = blocks.length;
+				if (default305) {
+					document.getElementById('current_epoch').innerHTML = 'Stuck in 305';
+				} else {
+					document.getElementById('current_epoch').innerHTML = epoch.data.cardano.currentEpoch.number;
+				}
+				var c = 0;
+
+				function scanBlocks() {
+					var currentBlock = blocks[c];
+					document.getElementById('current_block').innerHTML = currentBlock.number;
+					document.getElementById('current_transactions').innerHTML = currentBlock.transactionsCount;
+					document.getElementById('current_slot').innerHTML = currentBlock.slotNo;
+					var y = Math.sin(currentBlock.number) * 1.5;
+					var y2 = Math.abs(Math.cos(currentBlock.transactionsCount));
+					var y3 = Math.abs(Math.cos(currentBlock.slotNo) * 1.5);
+					for (let i = 0; i !== allActionsLen; ++i) {
+						const action = allActions[i];
+						const clip = action.getClip();
+						const settings = baseActions[clip.name] || additiveActions[clip.name];
+						if (settings === baseActions[clip.name]) {
+							if (y >= -1.5 && y < -0.5) {
+								if (action._clip.name === 'idle') {
+									const currentSettings = baseActions[currentBaseAction];
+									const currentAction = currentSettings ? currentSettings.action : null;
+									if (currentAction !== action) {
+										prepareCrossFade(currentAction, action, 0.35);
+									}
+								}
+							} else if (y >= -0.5 && y <= 0.5) {
+								if (action._clip.name === 'walk') {
+									const currentSettings = baseActions[currentBaseAction];
+									const currentAction = currentSettings ? currentSettings.action : null;
+									if (currentAction !== action) {
+										prepareCrossFade(currentAction, action, 0.35);
+									}
+								}
+							} else if (y > 0.5 && y <= 1.5) {
+								if (action._clip.name === 'run') {
+									const currentSettings = baseActions[currentBaseAction];
+									const currentAction = currentSettings ? currentSettings.action : null;
+									if (currentAction !== action) {
+										prepareCrossFade(currentAction, action, 0.35);
+									}
+								}
+							}
+						} else if (settings === additiveActions[clip.name]) {
+							if (action._clip.name === 'agree') {
+								setWeight(action, y2);
+								panelSettings[action._clip.name] = y2;
+							} else if (action._clip.name === 'headShake' && (c + 1) < blocksLen) {
+								y2 = Math.abs(Math.cos(blocks[c + 1].transactionsCount));
+								setWeight(action, y2);
+								panelSettings[action._clip.name] = y2;
+							} else if (action._clip.name === 'sneak_pose' && (c + 2) < blocksLen) {
+								y2 = Math.abs(Math.cos(blocks[c + 2].transactionsCount));
+								setWeight(action, y2);
+								panelSettings[action._clip.name] = y2;
+							}
+						}
+					}
+					modifyTimeScale(y3);
+					panelSettings['modify time scale'] = y3;
+					c++;
+					if (c < blocksLen) {
+						setTimeout(function() {
+							scanBlocks();
+						}, 7000);
+					} else {
+						dandelionAPIs(allActions, epoch305);
+					}
+				}
+				scanBlocks();
+			}
+
+			function activateAction(action) {
+				const clip = action.getClip();
+				const settings = baseActions[clip.name] || additiveActions[clip.name];
+				setWeight(action, settings.weight);
+				action.play();
+			}
+
+			function modifyTimeScale(speed) {
+
+				mixer.timeScale = speed;
+
+			}
+
+			function prepareCrossFade(startAction, endAction, duration) {
+
+				// If the current action is 'idle', execute the crossfade immediately;
+				// else wait until the current action has finished its current loop
+				if (currentBaseAction === 'idle' || !startAction || !endAction) {
+
+					executeCrossFade(startAction, endAction, duration);
+
+				} else {
+
+					synchronizeCrossFade(startAction, endAction, duration);
+
+				}
+
+				// Update control colors
+
+				if (endAction) {
+
+					const clip = endAction.getClip();
+					currentBaseAction = clip.name;
+
+				} else {
+
+					currentBaseAction = 'None';
+
+				}
+
+				crossFadeControls.forEach(function(control) {
+
+					const name = control.property;
+					if (name === currentBaseAction) {
+
+						control.setActive();
+
+					} else {
+
+						control.setInactive();
+
+					}
+
+				});
+
+			}
+
+			function synchronizeCrossFade(startAction, endAction, duration) {
+
+				mixer.addEventListener('loop', onLoopFinished);
+
+				function onLoopFinished(event) {
+
+					if (event.action === startAction) {
+
+						mixer.removeEventListener('loop', onLoopFinished);
+
+						executeCrossFade(startAction, endAction, duration);
+
+					}
+
+				}
+
+			}
+
+			function executeCrossFade(startAction, endAction, duration) {
+
+				// Not only the start action, but also the end action must get a weight of 1 before fading
+				// (concerning the start action this is already guaranteed in this place)
+
+				if (endAction) {
+
+					setWeight(endAction, 1);
+					endAction.time = 0;
+
+					if (startAction) {
+
+						// Crossfade with warping
+
+						startAction.crossFadeTo(endAction, duration, true);
+
+					} else {
+
+						// Fade in
+
+						endAction.fadeIn(duration);
+
+					}
+
+				} else {
+
+					// Fade out
+
+					startAction.fadeOut(duration);
+
+				}
+
+			}
+
+			// This function is needed, since animationAction.crossFadeTo() disables its start action and sets
+			// the start action's timeScale to ((start animation's duration) / (end animation's duration))
+
+			function setWeight(action, weight) {
+
+				action.enabled = true;
+				action.setEffectiveTimeScale(1);
+				action.setEffectiveWeight(weight);
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize(window.innerWidth, window.innerHeight);
+
+			}
+
+			function animate() {
+
+				// Render loop
+
+				requestAnimationFrame(animate);
+
+				for (let i = 0; i !== numAnimations; ++i) {
+
+					const action = allActions[i];
+					const clip = action.getClip();
+					const settings = baseActions[clip.name] || additiveActions[clip.name];
+					settings.weight = action.getEffectiveWeight();
+
+				}
+
+				// Get the time elapsed since the last frame, used for mixer update
+
+				const mixerUpdateDelta = clock.getDelta();
+				// Update the animation mixer, the stats panel, and render this frame
+
+				mixer.update(mixerUpdateDelta);
+
+				stats.update();
+
+				renderer.render(scene, camera);
+
+			}
+		</script>
+
+</body>
+</html>

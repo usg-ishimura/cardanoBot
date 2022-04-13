@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<meta name="viewport" content="width=1024">
+<style>
+body {
+    margin: 0;                 /* Reset default margin */
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: helvetica;
+}
+iframe {
+    display: block;            /* iframes are inline by default */
+    border: none;              /* Reset default border */
+    height: 100vh;             /* Viewport-relative units */
+    width: 100vw;
+}
+</style>
+</head>
+<body>
+<iframe srcdoc="<!DOCTYPE html>
+<html lang='en'>
+<html>
+<head>
+<meta name='viewport' content='width=1024'>
+<style>
+body {
+background-color: #000000;
+color: #FFFFFF;
+font-family: helvetica;
+}
+</style>
+</head>
+<body>
+<span>
+At the time I minted this, Blockfrost IPFS gateway is implemented in pool.pm and blocks external resources to prevent XSS attacks through Content-Security-Policy, thus blocking any API call and the possibility of having embedded dynamic CNFT. After trying to find some vulnerabilities, I learned about the existence of some browser add-ons that remove the server Content-Security-Policy header to disable CSP, making embedded dCNFT possible. 'mHeaderControl' Firefox add-on removes CSP header on a per-page basis, while 'always disable CSP' Chrome add-on does it globally, so it's fundamental to turn it off after browsing dynamic CNFTs on pool.pm to not lose major security features. In Cardano BOT's scenario, the 3D model takes Cardano Blockchain real time data as input and transforms them into movements, if you see 'Stuck in 305' next to the current epoch entry, the model moves based on locally stored last hundred blocks of epoch 305, meaning either that CSP blocks data fetching in embedded dCNFT (which you can fix by using add-ons) or that Dandelion APIs are down.
+</span>
+</body>
+</html>">
+</iframe>
+</body>
+</html>
