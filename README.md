@@ -1,8 +1,8 @@
 # Cardano Bot
 ### Background
-This project was born for fun, even if I'm skeptical about NFTs the intention was to prove that i could mint and visualize a piece capable of interacting in real-time with Cardano Blockchain data even though [<ins>pool.pm</ins>](https://pool.pm) blocked any API call through the Content Security Policy of Blockfrost IPFS gateway. I tried to find some XSS vulnerabilities first to make it work anyway, but to end the project I decided to temporarily disable CSP with browser add-ons just for the dynamic tokens visualization. Currently [<ins>pool.pm</ins>](https://pool.pm) has a different IPFS gateway and now it natively supports dynamic CNFT visualization. 
+This project was born for fun, even if I'm skeptical about NFTs the intention was to prove that i could mint and visualize a piece capable of interacting in real-time with Cardano Blockchain data even though [<ins>pool.pm</ins>](https://pool.pm) blocked any API call through the Content Security Policy of Blockfrost IPFS gateway. I tried to find some XSS vulnerabilities first to make it work anyway, but to end the project I decided to disable CSP with browser add-ons just for the dynamic tokens visualization on [<ins>pool.pm</ins>](https://pool.pm).
 ### How it works
-In Cardano Bot's scenario, the three.js 3D model takes Blockchain data as input and transforms them into movements, if you see "Stuck in 305" next to the current epoch entry, the model moves based on locally stored last hundred blocks of epoch 305, meaning now that Dandelion APIs are down.
+In Cardano Bot's scenario, the three.js 3D model takes Blockchain data as input and transforms them into movements, if you see "Stuck in 305" next to the current epoch entry, the model moves based on locally stored last hundred blocks of epoch 305, meaning either that CSP blocks data fetching (on the minted token) or that Dandelion APIs are down.
 ### Minted project
 The minted work can be found here: 
 [<ins>https://pool.pm/addr1v9avkca4utl9z6ahd0sxk5x2j68cd9xjm3tzcegkmk07xas0g675d</ins>](https://pool.pm/addr1v9avkca4utl9z6ahd0sxk5x2j68cd9xjm3tzcegkmk07xas0g675d)
@@ -51,7 +51,4 @@ http://127.0.0.1:8080/c_b.html
 ### License
 
 MIT
-
-**Free Software, Hell Yeah!**
-
 
