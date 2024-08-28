@@ -4,7 +4,7 @@ This project was born for fun, even if I'm skeptical about NFTs the intention wa
 ### How it works
 In Cardano Bot's scenario, the three.js 3D model takes Blockchain data as input and transforms them into movements, if you see "Stuck in 305" next to the current epoch entry, the model moves based on locally stored last hundred blocks of epoch 305, meaning either that CSP blocks data fetching (just on the minted token) or that Dandelion APIs are down.
 ### IPFS hosted and minted project
-- IPFS hosted: [<ins>https://ipfs.io/ipfs/QmVMC5CcSKtqwCnniY348AcGw8aHtJqazodDMXYqoXJgtX/c_b.html</ins>](https://ipfs.io/ipfs/QmVMC5CcSKtqwCnniY348AcGw8aHtJqazodDMXYqoXJgtX/c_b.html)
+- IPFS hosted:  [<ins>https://bafybeidievcyfzhygpljmvud6pwnbotjsiizt76s74chzms4y4tq4sg26a.ipfs.dweb.link/c_b.html</ins>](https://bafybeidievcyfzhygpljmvud6pwnbotjsiizt76s74chzms4y4tq4sg26a.ipfs.dweb.link/c_b.html)
 - Minted token: [<ins>https://pool.pm/addr1v9avkca4utl9z6ahd0sxk5x2j68cd9xjm3tzcegkmk07xas0g675d</ins>](https://pool.pm/addr1v9avkca4utl9z6ahd0sxk5x2j68cd9xjm3tzcegkmk07xas0g675d)
 
 ### Metadata
